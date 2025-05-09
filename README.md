@@ -1,4 +1,4 @@
-# ReachVisualRandomizer
+# Halo3VisualRandomizer
 An easy-to-use randomzier for Halo Reach on the Master Chief Collection (MCC).
 ![image](https://github.com/user-attachments/assets/5783ea2c-781b-496f-9fda-111f87458cb0)
 
