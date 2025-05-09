@@ -21,7 +21,7 @@ An easy-to-use randomzier for Halo 3 on the Master Chief Collection (MCC).
 
 # FAQ
 - What does this randomize?
-  - Enemy types, the weapons they hold, if they are in vehicles (no vehicle to vehicle only), the types of vehicles they use, weapons, vehicles, equipment and misc objects that can be found in the world, custscene dialogue, and cutscene model variants. Certain enemies that if randomized could softlock the game are not randomized. Flood infection forms are not randomized into to avoid glitches, but can still be spawned by flood tank forms and flood carrier forms.
+  - Enemy types, the weapons they hold, if they are in vehicles (no vehicle to vehicle only), the types of vehicles they use, weapons, vehicles, equipment and weapon crates, custscene dialogue, and cutscene model variants. Certain enemies that if randomized could softlock the game are not randomized. Flood infection forms are not randomized into to avoid glitches, but can still be spawned by flood tank forms and flood carrier forms.
 - How likely is a softlock?
   - Pretty unlikely. You should expect to go through the game with no major issues. Once in a blue moon, an enemy you need to kill will be stuck in level geometry. If you get stuck, try looking around for enemies or backtracking and going back through a level without using a flying vehicle. If you are stuck in Crow's Nest after the elevator, there's an easy-to-miss enemy that won't always jump down from the windowed area that you'll need to look for (this issue also exists when not randomized).
 - Can I play this online with friends?
