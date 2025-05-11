@@ -444,7 +444,7 @@ namespace Halo3VisualRandomizer
                 Settings = settings;
                 int seed = settings.Seed;
                 foreach (char c in level.Name)
-                    seed += c % 300;
+                    seed += c % 500;
                 Rand = new Random(seed);
                 LevelPath = @"levels\solo\" + level.Name + @"\" + level.Name;
                 LevelFolderPath = @"levels\solo\" + level.Name;

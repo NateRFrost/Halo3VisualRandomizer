@@ -876,6 +876,10 @@ namespace Halo3VisualRandomizer
             "spark",
             "beach_cov_aa",
             "lakebed_a_wraith_01",
+            "cov_dw_bridge_wraith",
+            "cov_dw_bridge_pack_0",
+            "cov_dw_bridge_grunts",
+            "cov_dw_bridge_pack_1",
         };
 
         public static List<string> skipCharacterEnemySquads = new List<string>()
@@ -919,6 +923,9 @@ namespace Halo3VisualRandomizer
             "monitor",
             "343",
             "spark",
+            "cov_dw_bridge_pack_0",
+            "cov_dw_bridge_grunts",
+            "cov_dw_bridge_pack_1",
         };
         public static List<string> forceNoSkipCharacterEnemySquads = new List<string>()
         {
