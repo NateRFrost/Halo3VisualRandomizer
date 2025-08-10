@@ -75,6 +75,7 @@
     <Reference Include="ManagedBlam, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\ManagedBlam.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -95,9 +96,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LevelRandomizer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandomizedItems.cs" />
+    <Compile Include="RandomizedItems\Characters.cs" />
+    <Compile Include="RandomizedItems\Crates.cs" />
+    <Compile Include="RandomizedItems\Equipment.cs" />
+    <Compile Include="RandomizedItems\SquadSpecialCases.cs" />
+    <Compile Include="RandomizedItems\Dialogue.cs" />
+    <Compile Include="RandomizedItems\Cutscenes.cs" />
+    <Compile Include="RandomizedItems\Animations.cs" />
+    <Compile Include="RandomizedItems\Machines.cs" />
+    <Compile Include="RandomizedItems\Bipeds.cs" />
+    <Compile Include="RandomizedItems\Scenery.cs" />
+    <Compile Include="RandomizedItems\Vehicles.cs" />
+    <Compile Include="RandomizedItems\Weapons.cs" />
+    <Compile Include="RandomizedItems\RandomizedItems.cs" />
+    <Compile Include="RandomizedItems\Levels.cs" />
+    <Compile Include="SquadRandomizer.cs" />
     <Compile Include="Randomizer.cs" />
     <Compile Include="RandomizerSettings.cs" />
     <EmbeddedResource Include="Form1.resx">

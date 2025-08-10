@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using static Halo3VisualRandomizer.RandomizedItems;
+using static Halo3VisualRandomizer.RandomizedItems.RandomizedItems;
 
 namespace Halo3VisualRandomizer
 {

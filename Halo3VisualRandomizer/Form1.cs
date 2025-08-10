@@ -1,10 +1,12 @@
-﻿using System;
-using System.Diagnostics;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Win32;
+using static Halo3VisualRandomizer.RandomizedItems.RandomizedItems;
 using static Halo3VisualRandomizer.Randomizer;
 
 namespace Halo3VisualRandomizer
@@ -107,6 +109,7 @@ namespace Halo3VisualRandomizer
             Settings.RandomizeCutscenes = randomize_cutscenes_checkbox.Checked;
             Settings.RandomizeStartingProfiles = randomize_starting_profiles_checkbox.Checked;
             SetCompatibleCharacters();
+            CopyManagedBlam();
             Randomizer.Randomize(Settings, progress, text_progress);
         }
 
@@ -149,19 +152,19 @@ namespace Halo3VisualRandomizer
                 switch (factionCheckedListBox.Items[i])
                 {
                     case "human":
-                        factionCompatability.AddCompatibleFaction(RandomizedItems.Faction.Human);
+                        factionCompatability.AddCompatibleFaction(Faction.Human);
                         break;
                     case "covenant":
-                        factionCompatability.AddCompatibleFaction(RandomizedItems.Faction.Covenant);
+                        factionCompatability.AddCompatibleFaction(Faction.Covenant);
                         break;
                     case "elite":
-                        factionCompatability.AddCompatibleFaction(RandomizedItems.Faction.Elite);
+                        factionCompatability.AddCompatibleFaction(Faction.Elite);
                         break;
                     case "flood":
-                        factionCompatability.AddCompatibleFaction(RandomizedItems.Faction.Flood);
+                        factionCompatability.AddCompatibleFaction(Faction.Flood);
                         break;
                     case "forerunner":
-                        factionCompatability.AddCompatibleFaction(RandomizedItems.Faction.Forerunner);
+                        factionCompatability.AddCompatibleFaction(Faction.Forerunner);
                         break;
                 }
             }
@@ -170,6 +173,25 @@ namespace Halo3VisualRandomizer
         private void Form1_Load(object sender, EventArgs e)
         {
             SetCharactersAllCompatible();
+        }
+
+        public void CopyManagedBlam()
+        {
+            string fileToCopy = Settings.EkPath + @"\bin\ManagedBlam.dll";
+            string destinationDirectory = "";
+            if (!File.Exists(fileToCopy))
+            {
+                throw new Exception("ManagedBlam.dll not found. Make sure EK path is correct");
+            }
+            if (!File.Exists(@"ManagedBlam.dll"))
+            {
+                Debug.WriteLine("Copying ManagedBlam from EK");
+                File.Copy(fileToCopy, destinationDirectory + Path.GetFileName(fileToCopy), true);
+                if (!File.Exists(@"ManagedBlam.dll"))
+                {
+                    throw new Exception("failed to copy ManagedBlam.dll");
+                }
+            }
         }
     }
 }
