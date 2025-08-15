@@ -128,6 +128,8 @@ namespace Halo3VisualRandomizer.RandomizedItems
 
         public class RandomizedObjectDetails
         {
+            public string FancyName { get; set; } = "";
+            public bool Editable { get; set; } = true;
             public string Name { get; set; } = "";
             public string Path { get; set; } = @"";
             public int AmmoMag { get; set; } = 0;

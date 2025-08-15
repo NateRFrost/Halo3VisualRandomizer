@@ -53,7 +53,7 @@ namespace Halo3VisualRandomizer.RandomizedItems
                 SquadNames=new List<string>(){
                     "warthog01",
                 },
-                AllowedVehicles = new List<string>() {"warthog", "warthog_snow", "hornet", "hornet_lite", "mauler", "mongoose", "mongoose_snow", "ghost"},
+                AllowedVehicles = new List<string>() {"warthog", "warthog_snow", "hornet", "hornet_lite", "mauler", "mongoose", "mongoose_snow", "ghost", "banshee"},
                 AllowedVehicleVariants = new List<string>() {"default", "gauss", "troop", "no_turret",},
             },
             new SquadSpecialCase()
@@ -172,6 +172,11 @@ namespace Halo3VisualRandomizer.RandomizedItems
                     "hangar_a_phantom04_legend_a",
                     "hangar_a_phantom04_legend_b",
                     "hangar_a_phantom04_legend_c",
+                    "hangar_a_cov_phantom01_drop_a",
+                    "hangar_a_cov_phantom01_drop_b",
+                    "hangar_a_cov_phantom02_drop_a",
+                    "hangar_a_cov_phantom03_drop_a",
+                    "hangar_a_cov_phantom03_drop_b",
                     "cov_dw_bridge_pack_0",
                     "cov_dw_bridge_pack_1",
                     "cov_dw_bridge_grunts",

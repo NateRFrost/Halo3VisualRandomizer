@@ -40,7 +40,7 @@ namespace Halo3VisualRandomizer
 
             }
 
-            text_progress.Report("Giving vehicle and weapon animations for enemies");
+            text_progress.Report("Giving vehicle and weapon animations for characters");
             progress.Report(14);
             FixAnimationGraphs();
             //text_progress.Report("Fixing jetpack enemies");

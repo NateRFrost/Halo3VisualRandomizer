@@ -7,7 +7,23 @@ namespace Halo3VisualRandomizer
 {
     public class RandomizerSettings
     {
-        public int Seed { get; set; } = 2;
+        public int Seed { get; private set; } = 0;
+        private string _SeedString = "";
+        public string SeedString
+        {
+            get
+            {
+                return _SeedString;
+            }
+            set
+            {
+                _SeedString = value;
+                foreach (char c in _SeedString)
+                {
+                    Seed += c;
+                }
+            }
+        }
         public string EkPath { get; set; } = @"C:\Program Files (x86)\Steam\steamapps\common\H3EK";
         public string MCCPath { get; set; } = @"C:\Program Files (x86)\Steam\steamapps\common\Halo The Master Chief Collection";
 

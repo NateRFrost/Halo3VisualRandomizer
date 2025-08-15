@@ -77,50 +77,23 @@ namespace Halo3VisualRandomizer
         private async void begin_randomization_button_Click(object sender, EventArgs e)
         {
             begin_randomization_button.Enabled = false;
+            tabControl1.Enabled = false;
+            tableLayoutPanelPaths.Enabled = false;
             progressBar1.Maximum = 100;
             progressBar1.Step = 1;
             var progress = new Progress<int>(v => { progressBar1.Value = v; });
             var text_progress = new Progress<string>(v => { progress_label.Text += v + "\n"; });
             await Task.Run(() => begin_randomization(progress, text_progress));
+            tabControl1.Enabled = true;
+            tableLayoutPanelPaths.Enabled = true;
             begin_randomization_button.Enabled = true;
         }
 
         private void begin_randomization(IProgress<int> progress, IProgress<string> text_progress)
         {
-            int seed = 0;
-            foreach (char c in seed_box.Text)
-            {
-                seed += c % 200;
-            }
-            Settings.Seed = seed;
-            Settings.MCCPath = MCCPathBox.Text;
-            Settings.EkPath = EKPathBox.Text;
-            Settings.RandomizeSquads = randomize_squads_checkbox.Checked;
-            Settings.GiveVehicleChance = (float)give_vehicle_updown.Value;
-            //Settings.MakeMuleChance = (float)mule_updown.Value;
-            Settings.MakeHunterChance = (float)hunter_chance_updown.Value;
-            //Settings.MakeEngineerChance = (float)engineer_chance_updown.Value;
-            Settings.SquadSizeMultiplier = (float)squad_size_multiplier_updown.Value;
-            Settings.RandomizeVehicles = randomize_vehicles_checkbox.Checked;
-            Settings.RandomizeWeapons = randomize_weapons_checkbox.Checked;
-            Settings.RandomizeEquipments = randomize_equipment_checkbox.Checked;
-            Settings.RandomizeEnvironmentalObjects = randomize_objects_checkbox.Checked;
-            Settings.RandomizeWeaponStashTypes = randomize_weapon_stash_type_checkbox.Checked;
-            Settings.RandomizeCutscenes = randomize_cutscenes_checkbox.Checked;
-            Settings.RandomizeStartingProfiles = randomize_starting_profiles_checkbox.Checked;
             SetCompatibleCharacters();
             CopyManagedBlam();
             Randomizer.Randomize(Settings, progress, text_progress);
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void SetCharactersAllCompatible()
@@ -149,6 +122,10 @@ namespace Halo3VisualRandomizer
             factionCompatability.RemoveAllCompatibleFactions();
             for (int i = 0; i < factionCheckedListBox.Items.Count; i++)
             {
+                if (!factionCheckedListBox.GetItemChecked(i))
+                {
+                    continue; // Skip unchecked items
+                }
                 switch (factionCheckedListBox.Items[i])
                 {
                     case "human":
@@ -168,11 +145,91 @@ namespace Halo3VisualRandomizer
                         break;
                 }
             }
+            Debug.WriteLine($"Faction: {factionCompatability.Faction} Compatible Factions: {string.Join(", ", factionCompatability.CompatibleFactions)}");
+        }
+
+
+
+        private void SetUpWeightTable(TableLayoutPanel panel, RandomizedObjectList objectList)
+        {
+            panel.RowCount = 0;
+            panel.RowStyles.Clear();
+            panel.RowCount++;
+            panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            panel.Controls.Add(new Label() { Text = "Name", AutoSize = true }, 0, panel.RowCount - 1);
+            panel.Controls.Add(new Label() { Text = "Weight", AutoSize = true }, 1, panel.RowCount - 1);
+            foreach (var item in objectList.List)
+            {
+                if (!item.Editable)
+                {
+                    continue; // Skip items that are not editable
+                }
+                panel.RowCount++;
+                panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                panel.Controls.Add(new Label() { Text = item.FancyName, AutoSize = true, Anchor = AnchorStyles.Left}, 0, panel.RowCount - 1);
+                var updown = new NumericUpDown()
+                {
+                    Minimum = 0,
+                    Maximum = 100,
+                    Value = item.Weight,
+                    Name = item.Name + "_weight",
+                    Tag = item
+
+                };
+                updown.DataBindings.Add("Value", item, "Weight", true, DataSourceUpdateMode.OnPropertyChanged);
+                panel.Controls.Add(updown, 1, panel.RowCount - 1);
+
+            }
+        }
+
+        private void SetUpLevelsTable(TableLayoutPanel panel)
+        {
+            panel.RowCount = 0;
+            panel.RowStyles.Clear();
+            panel.RowCount++;
+            panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            panel.Controls.Add(new Label() { Text = "Name", AutoSize = true }, 0, panel.RowCount - 1);
+            panel.Controls.Add(new Label() { Text = "Randomize", AutoSize = true }, 1, panel.RowCount - 1);
+            foreach (var level in Levels)
+            {
+
+                panel.RowCount++;
+                panel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                panel.Controls.Add(new Label() { Text = level.FancyName, AutoSize = true, Anchor = AnchorStyles.Left }, 0, panel.RowCount - 1);
+                var checkbox = new CheckBox()
+                {
+                    Checked = level.Randomize,
+                    Name = level.Name + "_randomize",
+                    Tag = level
+                };
+                checkbox.DataBindings.Add("Checked", level, "Randomize", true, DataSourceUpdateMode.OnPropertyChanged);
+                panel.Controls.Add(checkbox, 1, panel.RowCount - 1);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             SetCharactersAllCompatible();
+            SetUpWeightTable(tableLayoutPanelCharacters, RandomizedItems.RandomizedItems.characters);
+            SetUpWeightTable(tableLayoutPanelWeapons, RandomizedItems.RandomizedItems.weapons);
+            SetUpWeightTable(tableLayoutPanelVehicles, RandomizedItems.RandomizedItems.vehicles);
+            SetUpWeightTable(tableLayoutPanelEquipment, RandomizedItems.RandomizedItems.equipments);
+            SetUpLevelsTable(tableLayoutPanelLevels);
+            seed_box.DataBindings.Add("Text", Settings, "SeedString", true, DataSourceUpdateMode.OnPropertyChanged); 
+            MCCPathBox.DataBindings.Add("Text", Settings, "MCCPath", true, DataSourceUpdateMode.OnPropertyChanged);
+            EKPathBox.DataBindings.Add("Text", Settings, "EkPath", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_squads_checkbox.DataBindings.Add("Checked", Settings, "RandomizeSquads", true, DataSourceUpdateMode.OnPropertyChanged);
+            give_vehicle_updown.DataBindings.Add("Value", Settings, "GiveVehicleChance", true, DataSourceUpdateMode.OnPropertyChanged);
+            //mule_updown.DataBindings.Add("Value", Settings, "MakeMuleChance", true, DataSourceUpdateMode.OnPropertyChanged);
+            hunter_chance_updown.DataBindings.Add("Value", Settings, "MakeHunterChance", true, DataSourceUpdateMode.OnPropertyChanged);
+            squad_size_multiplier_updown.DataBindings.Add("Value", Settings, "SquadSizeMultiplier", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_vehicles_checkbox.DataBindings.Add("Checked", Settings, "RandomizeVehicles", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_weapons_checkbox.DataBindings.Add("Checked", Settings, "RandomizeWeapons", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_equipment_checkbox.DataBindings.Add("Checked", Settings, "RandomizeEquipments", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_objects_checkbox.DataBindings.Add("Checked", Settings, "RandomizeEnvironmentalObjects", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_weapon_stash_type_checkbox.DataBindings.Add("Checked", Settings, "RandomizeWeaponStashTypes", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_cutscenes_checkbox.DataBindings.Add("Checked", Settings, "RandomizeCutscenes", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_starting_profiles_checkbox.DataBindings.Add("Checked", Settings, "RandomizeStartingProfiles", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         public void CopyManagedBlam()

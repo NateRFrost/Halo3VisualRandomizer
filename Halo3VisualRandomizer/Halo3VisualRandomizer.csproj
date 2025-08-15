@@ -142,11 +142,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7za.dll" />
     <Content Include="7za.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="7zxa.dll" />
     <Content Include="HR_Legendary_Icon.ico" />
   </ItemGroup>
   <ItemGroup>
