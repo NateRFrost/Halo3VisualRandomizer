@@ -30,6 +30,6 @@ An easy-to-use randomizer for Halo 3 on the Master Chief Collection (MCC).
 - Why does the randomizer take so long?
   - It builds and compiles each level from scratch using the offiical mod tools. This ensures that all objects are loaded into each level and made it drasticlly easier for me to code.
 - Will you make randomizers for the other Halo games?
-  - I already have one for Reach. I might make randomziers for ODST, or 4 as those are also compatible with this method of randomization. Do not expect ones for Halo CE or 2.
+  - I already have one for Reach. I might make randomziers for ODST or 4 as those are also compatible with this method of randomization. Do not expect ones for Halo CE or 2.
 
  Huge thanks to Daniel McCluskey for laying the groundwork for this tool.
