@@ -1,6 +1,7 @@
 # Halo3VisualRandomizer
 An easy-to-use randomizer for Halo 3 on the Master Chief Collection (MCC).
-![image](https://github.com/user-attachments/assets/5783ea2c-781b-496f-9fda-111f87458cb0)
+<img width="1980" height="735" alt="image" src="https://github.com/user-attachments/assets/1dbbe47d-e98d-47f5-b1c9-aa94c95f4be1" />
+
 
 
 # Requirements
