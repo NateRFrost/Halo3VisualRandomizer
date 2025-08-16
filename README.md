@@ -7,7 +7,7 @@ An easy-to-use randomizer for Halo 3 on the Master Chief Collection (MCC).
 # Requirements
 - Halo 3 on MCC
 - Halo 3 official mod tools (aka H3EK)
-  - They can be downloaded via steam https://store.steampowered.com/app/1695791/Halo_3_Mod_Tools__MCC/
+  - They can be downloaded via Steam https://store.steampowered.com/app/1695791/Halo_3_Mod_Tools__MCC/
  
 # How to use
 1. Consider backing up your installation of Halo 3 as the tool will overwrite it.
