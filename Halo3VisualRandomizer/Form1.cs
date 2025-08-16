@@ -170,7 +170,7 @@ namespace Halo3VisualRandomizer
                 var updown = new NumericUpDown()
                 {
                     Minimum = 0,
-                    Maximum = 100,
+                    Maximum = 1000,
                     Value = item.Weight,
                     Name = item.Name + "_weight",
                     Tag = item
@@ -219,6 +219,9 @@ namespace Halo3VisualRandomizer
             MCCPathBox.DataBindings.Add("Text", Settings, "MCCPath", true, DataSourceUpdateMode.OnPropertyChanged);
             EKPathBox.DataBindings.Add("Text", Settings, "EkPath", true, DataSourceUpdateMode.OnPropertyChanged);
             randomize_squads_checkbox.DataBindings.Add("Checked", Settings, "RandomizeSquads", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_squad_characters_checkbox.DataBindings.Add("Checked", Settings, "RandomizeSquadCharacters", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_squad_weapons_checkbox.DataBindings.Add("Checked", Settings, "RandomizeSquadWeapons", true, DataSourceUpdateMode.OnPropertyChanged);
+            randomize_squad_vehicles_checkbox.DataBindings.Add("Checked", Settings, "RandomizeSquadVehicles", true, DataSourceUpdateMode.OnPropertyChanged);
             give_vehicle_updown.DataBindings.Add("Value", Settings, "GiveVehicleChance", true, DataSourceUpdateMode.OnPropertyChanged);
             //mule_updown.DataBindings.Add("Value", Settings, "MakeMuleChance", true, DataSourceUpdateMode.OnPropertyChanged);
             hunter_chance_updown.DataBindings.Add("Value", Settings, "MakeHunterChance", true, DataSourceUpdateMode.OnPropertyChanged);

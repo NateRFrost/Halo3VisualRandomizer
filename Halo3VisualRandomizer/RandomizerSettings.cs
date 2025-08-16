@@ -37,6 +37,9 @@ namespace Halo3VisualRandomizer
 
         public bool RandomizeStartingProfiles { get; set; } = true;
         public bool RandomizeSquads { get; set; } = true;
+        public bool RandomizeSquadCharacters { get; set; } = true;
+        public bool RandomizeSquadWeapons { get; set; } = true;
+        public bool RandomizeSquadVehicles { get; set; } = true;
         public float GiveVehicleChance { get; set; } = 0.02f;
         public float MakeHunterChance { get; set; } = 0.01f;
         public float SquadSizeMultiplier { get; set; } = 1.00f;

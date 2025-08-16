@@ -100,7 +100,7 @@ namespace Halo3VisualRandomizer
                         normal_diff_count = null;
                     }
                     var old_character = characters.List.Where(x => x.PaletteIndex == ((TagFieldBlockIndex)character_field).Value && ((TagFieldBlockIndex)character_field).Value != -1).FirstOrDefault();
-                    if (old_character != null && (specialCase == null || specialCase.RandomizeCharacters))
+                    if (old_character != null && (specialCase == null || specialCase.RandomizeCharacters) && Settings.RandomizeSquadCharacters)
                     {
                         var old_character_faction = old_character.Faction;
                         ((TagFieldEnum)TeamField).Value = (int)old_character_faction;
@@ -133,11 +133,11 @@ namespace Halo3VisualRandomizer
                             ((TagFieldBlockIndex)character_field).Value = new_character.PaletteIndex;
                         }
                     }
-                    if (((TagFieldBlockIndex)weapon_field).Value != -1)
+                    if (((TagFieldBlockIndex)weapon_field).Value != -1 && Settings.RandomizeSquadWeapons)
                     {
                         ((TagFieldBlockIndex)weapon_field).Value = weapons.GetRandomObjectWeighted(Rand, require_palette_index: true).PaletteIndex;
                     }
-                    if (((TagFieldBlockIndex)vehicle_field).Value != -1 && (specialCase == null || specialCase.RandomizeVehicles))
+                    if (((TagFieldBlockIndex)vehicle_field).Value != -1 && (specialCase == null || specialCase.RandomizeVehicles) && Settings.RandomizeSquadVehicles)
                     {
                         HasVehicle = true;
                         var old_vehicle = vehicles.List.Where(x => x.PaletteIndex == ((TagFieldBlockIndex)vehicle_field).Value && ((TagFieldBlockIndex)vehicle_field).Value != -1).FirstOrDefault();

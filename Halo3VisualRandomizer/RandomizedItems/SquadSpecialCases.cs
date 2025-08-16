@@ -70,7 +70,7 @@ namespace Halo3VisualRandomizer.RandomizedItems
 
                 },
                 RandomizeVehicles = false,
-                AllowedCharacters = { "brute_jumppack", "floodcombat", "flood_combat", "bugger" }
+                AllowedCharacters = {"brute_jumppack", "floodcombat", "flood_combat"}
 
             },
             new SquadSpecialCase()

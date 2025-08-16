@@ -66,8 +66,6 @@ namespace Halo3VisualRandomizer
             this.seed_box = new System.Windows.Forms.TextBox();
             this.randomize_squads_label = new System.Windows.Forms.Label();
             this.randomize_squads_checkbox = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.randomize_starting_profiles_checkbox = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.randomize_cutscenes_checkbox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -90,6 +88,14 @@ namespace Halo3VisualRandomizer
             this.tableLayoutPanelEquipment = new System.Windows.Forms.TableLayoutPanel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelLevels = new System.Windows.Forms.TableLayoutPanel();
+            this.randomize_starting_profiles_checkbox = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.randomize_squad_characters_checkbox = new System.Windows.Forms.CheckBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.randomize_squad_weapons_checkbox = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.randomize_squad_vehicles_checkbox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelPaths.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -123,7 +129,7 @@ namespace Halo3VisualRandomizer
             // 
             this.EKPathBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EKPathBox.Location = new System.Drawing.Point(5, 59);
+            this.EKPathBox.Location = new System.Drawing.Point(5, 60);
             this.EKPathBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.EKPathBox.Name = "EKPathBox";
             this.EKPathBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -155,13 +161,13 @@ namespace Halo3VisualRandomizer
             this.tableLayoutPanelPaths.Controls.Add(this.EKPathBox, 0, 1);
             this.tableLayoutPanelPaths.Controls.Add(this.MCCPathButton, 1, 0);
             this.tableLayoutPanelPaths.Controls.Add(this.EKPathButton, 1, 1);
-            this.tableLayoutPanelPaths.Location = new System.Drawing.Point(1013, 648);
+            this.tableLayoutPanelPaths.Location = new System.Drawing.Point(1012, 648);
             this.tableLayoutPanelPaths.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tableLayoutPanelPaths.Name = "tableLayoutPanelPaths";
             this.tableLayoutPanelPaths.RowCount = 2;
             this.tableLayoutPanelPaths.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelPaths.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelPaths.Size = new System.Drawing.Size(1579, 110);
+            this.tableLayoutPanelPaths.Size = new System.Drawing.Size(1579, 112);
             this.tableLayoutPanelPaths.TabIndex = 9;
             // 
             // MCCPathButton
@@ -181,7 +187,7 @@ namespace Halo3VisualRandomizer
             // 
             this.EKPathButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EKPathButton.Location = new System.Drawing.Point(991, 59);
+            this.EKPathButton.Location = new System.Drawing.Point(991, 60);
             this.EKPathButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.EKPathButton.Name = "EKPathButton";
             this.EKPathButton.Size = new System.Drawing.Size(583, 46);
@@ -209,7 +215,7 @@ namespace Halo3VisualRandomizer
             this.panel1.Location = new System.Drawing.Point(1013, 13);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1578, 604);
+            this.panel1.Size = new System.Drawing.Size(1578, 607);
             this.panel1.TabIndex = 11;
             // 
             // progress_label
@@ -239,17 +245,19 @@ namespace Halo3VisualRandomizer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 13);
+            this.label1.Location = new System.Drawing.Point(10, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.MaximumSize = new System.Drawing.Size(750, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(690, 58);
+            this.label1.Size = new System.Drawing.Size(685, 58);
             this.label1.TabIndex = 17;
-            this.label1.Text = "What factions that characters of each faction can randomize into (when possible w" +
-    "ithout softlocking)";
+            this.label1.Text = "What factions the characters of each faction can randomize into (when possible wi" +
+    "thout softlocking)";
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.AutoSize = true;
+            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel3.ColumnCount = 5;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -266,13 +274,13 @@ namespace Halo3VisualRandomizer
             this.tableLayoutPanel3.Controls.Add(this.humanCompatabilityCheckedListBox, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.covenantCompatabilityCheckedListBox, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.eliteCompatabilityCheckedListBox, 2, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(8, 89);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 95);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.00966F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.99034F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(955, 253);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(885, 237);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
             // forerunnerCompatabilityCheckedListBox
@@ -284,10 +292,10 @@ namespace Halo3VisualRandomizer
             "elite",
             "forerunner",
             "flood"});
-            this.forerunnerCompatabilityCheckedListBox.Location = new System.Drawing.Point(993, 39);
+            this.forerunnerCompatabilityCheckedListBox.Location = new System.Drawing.Point(713, 37);
             this.forerunnerCompatabilityCheckedListBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.forerunnerCompatabilityCheckedListBox.Name = "forerunnerCompatabilityCheckedListBox";
-            this.forerunnerCompatabilityCheckedListBox.Size = new System.Drawing.Size(237, 132);
+            this.forerunnerCompatabilityCheckedListBox.Size = new System.Drawing.Size(167, 196);
             this.forerunnerCompatabilityCheckedListBox.TabIndex = 36;
             // 
             // floodCompatabilityCheckedListBox
@@ -299,10 +307,10 @@ namespace Halo3VisualRandomizer
             "elite",
             "forerunner",
             "flood"});
-            this.floodCompatabilityCheckedListBox.Location = new System.Drawing.Point(746, 39);
+            this.floodCompatabilityCheckedListBox.Location = new System.Drawing.Point(536, 37);
             this.floodCompatabilityCheckedListBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.floodCompatabilityCheckedListBox.Name = "floodCompatabilityCheckedListBox";
-            this.floodCompatabilityCheckedListBox.Size = new System.Drawing.Size(237, 196);
+            this.floodCompatabilityCheckedListBox.Size = new System.Drawing.Size(167, 196);
             this.floodCompatabilityCheckedListBox.TabIndex = 35;
             // 
             // label14
@@ -310,10 +318,10 @@ namespace Halo3VisualRandomizer
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(993, 0);
+            this.label14.Location = new System.Drawing.Point(713, 0);
             this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 35);
+            this.label14.Size = new System.Drawing.Size(133, 33);
             this.label14.TabIndex = 34;
             this.label14.Text = "Forerunner";
             // 
@@ -322,10 +330,10 @@ namespace Halo3VisualRandomizer
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(746, 0);
+            this.label13.Location = new System.Drawing.Point(536, 0);
             this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 35);
+            this.label13.Size = new System.Drawing.Size(76, 33);
             this.label13.TabIndex = 33;
             this.label13.Text = "Flood";
             // 
@@ -334,10 +342,10 @@ namespace Halo3VisualRandomizer
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(499, 0);
+            this.label12.Location = new System.Drawing.Point(359, 0);
             this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 35);
+            this.label12.Size = new System.Drawing.Size(61, 33);
             this.label12.TabIndex = 32;
             this.label12.Text = "Elite";
             // 
@@ -346,10 +354,10 @@ namespace Halo3VisualRandomizer
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(252, 0);
+            this.label11.Location = new System.Drawing.Point(182, 0);
             this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 35);
+            this.label11.Size = new System.Drawing.Size(114, 33);
             this.label11.TabIndex = 29;
             this.label11.Text = "Covenant";
             // 
@@ -361,7 +369,7 @@ namespace Halo3VisualRandomizer
             this.label2.Location = new System.Drawing.Point(5, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 35);
+            this.label2.Size = new System.Drawing.Size(89, 33);
             this.label2.TabIndex = 27;
             this.label2.Text = "Human";
             // 
@@ -374,10 +382,10 @@ namespace Halo3VisualRandomizer
             "elite",
             "forerunner",
             "flood"});
-            this.humanCompatabilityCheckedListBox.Location = new System.Drawing.Point(5, 39);
+            this.humanCompatabilityCheckedListBox.Location = new System.Drawing.Point(5, 37);
             this.humanCompatabilityCheckedListBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.humanCompatabilityCheckedListBox.Name = "humanCompatabilityCheckedListBox";
-            this.humanCompatabilityCheckedListBox.Size = new System.Drawing.Size(237, 196);
+            this.humanCompatabilityCheckedListBox.Size = new System.Drawing.Size(167, 196);
             this.humanCompatabilityCheckedListBox.TabIndex = 28;
             // 
             // covenantCompatabilityCheckedListBox
@@ -389,10 +397,10 @@ namespace Halo3VisualRandomizer
             "elite",
             "forerunner",
             "flood"});
-            this.covenantCompatabilityCheckedListBox.Location = new System.Drawing.Point(252, 39);
+            this.covenantCompatabilityCheckedListBox.Location = new System.Drawing.Point(182, 37);
             this.covenantCompatabilityCheckedListBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.covenantCompatabilityCheckedListBox.Name = "covenantCompatabilityCheckedListBox";
-            this.covenantCompatabilityCheckedListBox.Size = new System.Drawing.Size(237, 196);
+            this.covenantCompatabilityCheckedListBox.Size = new System.Drawing.Size(167, 196);
             this.covenantCompatabilityCheckedListBox.TabIndex = 30;
             // 
             // eliteCompatabilityCheckedListBox
@@ -404,10 +412,10 @@ namespace Halo3VisualRandomizer
             "elite",
             "forerunner",
             "flood"});
-            this.eliteCompatabilityCheckedListBox.Location = new System.Drawing.Point(499, 39);
+            this.eliteCompatabilityCheckedListBox.Location = new System.Drawing.Point(359, 37);
             this.eliteCompatabilityCheckedListBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.eliteCompatabilityCheckedListBox.Name = "eliteCompatabilityCheckedListBox";
-            this.eliteCompatabilityCheckedListBox.Size = new System.Drawing.Size(237, 196);
+            this.eliteCompatabilityCheckedListBox.Size = new System.Drawing.Size(167, 196);
             this.eliteCompatabilityCheckedListBox.TabIndex = 31;
             // 
             // tableLayoutPanelCharacters
@@ -459,49 +467,58 @@ namespace Halo3VisualRandomizer
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
-            this.tableLayoutPanel1.Controls.Add(this.squad_size_multiplier_updown, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.hunter_chance_updown, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.hunter_chance_label, 0, 2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.randomize_squad_vehicles_checkbox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label18, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_squad_weapons_checkbox, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label17, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_squad_characters_checkbox, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.squad_size_multiplier_updown, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.hunter_chance_updown, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.hunter_chance_label, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.seed_box, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.randomize_squads_label, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.randomize_squads_checkbox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.randomize_starting_profiles_checkbox, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.randomize_cutscenes_checkbox, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.randomize_weapon_stash_type_checkbox, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.randomize_objects_checkbox, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.randomize_equipment_checkbox, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.randomize_weapons_checkbox, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.randomize_vehicles_checkbox, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.give_vehicle_label, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.give_vehicle_updown, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_starting_profiles_checkbox, 1, 14);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_cutscenes_checkbox, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_weapon_stash_type_checkbox, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_objects_checkbox, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_equipment_checkbox, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_weapons_checkbox, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.randomize_vehicles_checkbox, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.give_vehicle_label, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.give_vehicle_updown, 1, 6);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 3);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 12;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1009, 613);
+            this.tableLayoutPanel1.RowCount = 15;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(894, 573);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // squad_size_multiplier_updown
@@ -514,7 +531,7 @@ namespace Halo3VisualRandomizer
             0,
             0,
             131072});
-            this.squad_size_multiplier_updown.Location = new System.Drawing.Point(635, 209);
+            this.squad_size_multiplier_updown.Location = new System.Drawing.Point(636, 281);
             this.squad_size_multiplier_updown.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.squad_size_multiplier_updown.Name = "squad_size_multiplier_updown";
             this.squad_size_multiplier_updown.Size = new System.Drawing.Size(252, 35);
@@ -530,10 +547,10 @@ namespace Halo3VisualRandomizer
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 205);
+            this.label15.Location = new System.Drawing.Point(6, 277);
             this.label15.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(497, 50);
+            this.label15.Size = new System.Drawing.Size(497, 43);
             this.label15.TabIndex = 26;
             this.label15.Text = "Squad size multiplier (unstable when not at 1)";
             // 
@@ -547,7 +564,7 @@ namespace Halo3VisualRandomizer
             0,
             0,
             131072});
-            this.hunter_chance_updown.Location = new System.Drawing.Point(635, 107);
+            this.hunter_chance_updown.Location = new System.Drawing.Point(636, 193);
             this.hunter_chance_updown.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.hunter_chance_updown.Maximum = new decimal(new int[] {
             1,
@@ -568,10 +585,10 @@ namespace Halo3VisualRandomizer
             this.hunter_chance_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.hunter_chance_label.AutoSize = true;
-            this.hunter_chance_label.Location = new System.Drawing.Point(6, 103);
+            this.hunter_chance_label.Location = new System.Drawing.Point(6, 189);
             this.hunter_chance_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.hunter_chance_label.Name = "hunter_chance_label";
-            this.hunter_chance_label.Size = new System.Drawing.Size(575, 50);
+            this.hunter_chance_label.Size = new System.Drawing.Size(619, 43);
             this.hunter_chance_label.TabIndex = 6;
             this.hunter_chance_label.Text = "Overwrite squad with hunter chance (with hunter fuel rod)";
             // 
@@ -583,13 +600,13 @@ namespace Halo3VisualRandomizer
             this.label8.Location = new System.Drawing.Point(6, 1);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 50);
+            this.label8.Size = new System.Drawing.Size(71, 43);
             this.label8.TabIndex = 20;
             this.label8.Text = "Seed";
             // 
             // seed_box
             // 
-            this.seed_box.Location = new System.Drawing.Point(635, 5);
+            this.seed_box.Location = new System.Drawing.Point(636, 5);
             this.seed_box.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.seed_box.Name = "seed_box";
             this.seed_box.Size = new System.Drawing.Size(208, 35);
@@ -600,10 +617,10 @@ namespace Halo3VisualRandomizer
             this.randomize_squads_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.randomize_squads_label.AutoSize = true;
-            this.randomize_squads_label.Location = new System.Drawing.Point(6, 52);
+            this.randomize_squads_label.Location = new System.Drawing.Point(6, 45);
             this.randomize_squads_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.randomize_squads_label.Name = "randomize_squads_label";
-            this.randomize_squads_label.Size = new System.Drawing.Size(219, 50);
+            this.randomize_squads_label.Size = new System.Drawing.Size(219, 35);
             this.randomize_squads_label.TabIndex = 0;
             this.randomize_squads_label.Text = "Randomize squads";
             // 
@@ -614,48 +631,22 @@ namespace Halo3VisualRandomizer
             this.randomize_squads_checkbox.AutoSize = true;
             this.randomize_squads_checkbox.Checked = true;
             this.randomize_squads_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randomize_squads_checkbox.Location = new System.Drawing.Point(635, 56);
+            this.randomize_squads_checkbox.Location = new System.Drawing.Point(636, 49);
             this.randomize_squads_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.randomize_squads_checkbox.Name = "randomize_squads_checkbox";
-            this.randomize_squads_checkbox.Size = new System.Drawing.Size(28, 42);
+            this.randomize_squads_checkbox.Size = new System.Drawing.Size(28, 27);
             this.randomize_squads_checkbox.TabIndex = 1;
             this.randomize_squads_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 562);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(317, 50);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Randomize starting loadouts";
-            // 
-            // randomize_starting_profiles_checkbox
-            // 
-            this.randomize_starting_profiles_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.randomize_starting_profiles_checkbox.AutoSize = true;
-            this.randomize_starting_profiles_checkbox.Checked = true;
-            this.randomize_starting_profiles_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randomize_starting_profiles_checkbox.Location = new System.Drawing.Point(635, 566);
-            this.randomize_starting_profiles_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.randomize_starting_profiles_checkbox.Name = "randomize_starting_profiles_checkbox";
-            this.randomize_starting_profiles_checkbox.Size = new System.Drawing.Size(28, 42);
-            this.randomize_starting_profiles_checkbox.TabIndex = 25;
-            this.randomize_starting_profiles_checkbox.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 511);
+            this.label9.Location = new System.Drawing.Point(6, 501);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(539, 50);
+            this.label9.Size = new System.Drawing.Size(539, 35);
             this.label9.TabIndex = 22;
             this.label9.Text = "Randomize cutscene dialogue and biped variants";
             // 
@@ -666,10 +657,10 @@ namespace Halo3VisualRandomizer
             this.randomize_cutscenes_checkbox.AutoSize = true;
             this.randomize_cutscenes_checkbox.Checked = true;
             this.randomize_cutscenes_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randomize_cutscenes_checkbox.Location = new System.Drawing.Point(635, 515);
+            this.randomize_cutscenes_checkbox.Location = new System.Drawing.Point(636, 505);
             this.randomize_cutscenes_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.randomize_cutscenes_checkbox.Name = "randomize_cutscenes_checkbox";
-            this.randomize_cutscenes_checkbox.Size = new System.Drawing.Size(28, 42);
+            this.randomize_cutscenes_checkbox.Size = new System.Drawing.Size(28, 27);
             this.randomize_cutscenes_checkbox.TabIndex = 23;
             this.randomize_cutscenes_checkbox.UseVisualStyleBackColor = true;
             // 
@@ -678,10 +669,10 @@ namespace Halo3VisualRandomizer
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 460);
+            this.label7.Location = new System.Drawing.Point(6, 465);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(612, 50);
+            this.label7.Size = new System.Drawing.Size(612, 35);
             this.label7.TabIndex = 18;
             this.label7.Text = "Weapon stashes won\'t only randomize to similar variants";
             // 
@@ -690,10 +681,10 @@ namespace Halo3VisualRandomizer
             this.randomize_weapon_stash_type_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.randomize_weapon_stash_type_checkbox.AutoSize = true;
-            this.randomize_weapon_stash_type_checkbox.Location = new System.Drawing.Point(635, 464);
+            this.randomize_weapon_stash_type_checkbox.Location = new System.Drawing.Point(636, 469);
             this.randomize_weapon_stash_type_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.randomize_weapon_stash_type_checkbox.Name = "randomize_weapon_stash_type_checkbox";
-            this.randomize_weapon_stash_type_checkbox.Size = new System.Drawing.Size(28, 42);
+            this.randomize_weapon_stash_type_checkbox.Size = new System.Drawing.Size(28, 27);
             this.randomize_weapon_stash_type_checkbox.TabIndex = 19;
             this.randomize_weapon_stash_type_checkbox.UseVisualStyleBackColor = true;
             // 
@@ -702,10 +693,10 @@ namespace Halo3VisualRandomizer
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 409);
+            this.label6.Location = new System.Drawing.Point(6, 429);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(315, 50);
+            this.label6.Size = new System.Drawing.Size(315, 35);
             this.label6.TabIndex = 16;
             this.label6.Text = "Randomize weapon stashes";
             // 
@@ -716,10 +707,10 @@ namespace Halo3VisualRandomizer
             this.randomize_objects_checkbox.AutoSize = true;
             this.randomize_objects_checkbox.Checked = true;
             this.randomize_objects_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randomize_objects_checkbox.Location = new System.Drawing.Point(635, 413);
+            this.randomize_objects_checkbox.Location = new System.Drawing.Point(636, 433);
             this.randomize_objects_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.randomize_objects_checkbox.Name = "randomize_objects_checkbox";
-            this.randomize_objects_checkbox.Size = new System.Drawing.Size(28, 42);
+            this.randomize_objects_checkbox.Size = new System.Drawing.Size(28, 27);
             this.randomize_objects_checkbox.TabIndex = 17;
             this.randomize_objects_checkbox.UseVisualStyleBackColor = true;
             // 
@@ -728,10 +719,10 @@ namespace Halo3VisualRandomizer
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 358);
+            this.label5.Location = new System.Drawing.Point(6, 393);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(430, 50);
+            this.label5.Size = new System.Drawing.Size(430, 35);
             this.label5.TabIndex = 14;
             this.label5.Text = "Randomize world equipment/grenades";
             // 
@@ -742,10 +733,10 @@ namespace Halo3VisualRandomizer
             this.randomize_equipment_checkbox.AutoSize = true;
             this.randomize_equipment_checkbox.Checked = true;
             this.randomize_equipment_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randomize_equipment_checkbox.Location = new System.Drawing.Point(635, 362);
+            this.randomize_equipment_checkbox.Location = new System.Drawing.Point(636, 397);
             this.randomize_equipment_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.randomize_equipment_checkbox.Name = "randomize_equipment_checkbox";
-            this.randomize_equipment_checkbox.Size = new System.Drawing.Size(28, 42);
+            this.randomize_equipment_checkbox.Size = new System.Drawing.Size(28, 27);
             this.randomize_equipment_checkbox.TabIndex = 15;
             this.randomize_equipment_checkbox.UseVisualStyleBackColor = true;
             // 
@@ -754,10 +745,10 @@ namespace Halo3VisualRandomizer
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 307);
+            this.label4.Location = new System.Drawing.Point(6, 357);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(305, 50);
+            this.label4.Size = new System.Drawing.Size(305, 35);
             this.label4.TabIndex = 12;
             this.label4.Text = "Randomize world weapons";
             // 
@@ -768,10 +759,10 @@ namespace Halo3VisualRandomizer
             this.randomize_weapons_checkbox.AutoSize = true;
             this.randomize_weapons_checkbox.Checked = true;
             this.randomize_weapons_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randomize_weapons_checkbox.Location = new System.Drawing.Point(635, 311);
+            this.randomize_weapons_checkbox.Location = new System.Drawing.Point(636, 361);
             this.randomize_weapons_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.randomize_weapons_checkbox.Name = "randomize_weapons_checkbox";
-            this.randomize_weapons_checkbox.Size = new System.Drawing.Size(28, 42);
+            this.randomize_weapons_checkbox.Size = new System.Drawing.Size(28, 27);
             this.randomize_weapons_checkbox.TabIndex = 13;
             this.randomize_weapons_checkbox.UseVisualStyleBackColor = true;
             // 
@@ -780,10 +771,10 @@ namespace Halo3VisualRandomizer
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 256);
+            this.label3.Location = new System.Drawing.Point(6, 321);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(295, 50);
+            this.label3.Size = new System.Drawing.Size(295, 35);
             this.label3.TabIndex = 10;
             this.label3.Text = "Randomize world vehicles";
             // 
@@ -794,10 +785,10 @@ namespace Halo3VisualRandomizer
             this.randomize_vehicles_checkbox.AutoSize = true;
             this.randomize_vehicles_checkbox.Checked = true;
             this.randomize_vehicles_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.randomize_vehicles_checkbox.Location = new System.Drawing.Point(635, 260);
+            this.randomize_vehicles_checkbox.Location = new System.Drawing.Point(636, 325);
             this.randomize_vehicles_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.randomize_vehicles_checkbox.Name = "randomize_vehicles_checkbox";
-            this.randomize_vehicles_checkbox.Size = new System.Drawing.Size(28, 42);
+            this.randomize_vehicles_checkbox.Size = new System.Drawing.Size(28, 27);
             this.randomize_vehicles_checkbox.TabIndex = 11;
             this.randomize_vehicles_checkbox.UseVisualStyleBackColor = true;
             // 
@@ -806,10 +797,10 @@ namespace Halo3VisualRandomizer
             this.give_vehicle_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.give_vehicle_label.AutoSize = true;
-            this.give_vehicle_label.Location = new System.Drawing.Point(6, 154);
+            this.give_vehicle_label.Location = new System.Drawing.Point(6, 233);
             this.give_vehicle_label.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.give_vehicle_label.Name = "give_vehicle_label";
-            this.give_vehicle_label.Size = new System.Drawing.Size(299, 50);
+            this.give_vehicle_label.Size = new System.Drawing.Size(299, 43);
             this.give_vehicle_label.TabIndex = 2;
             this.give_vehicle_label.Text = "Give squad vehicle chance";
             // 
@@ -823,7 +814,7 @@ namespace Halo3VisualRandomizer
             0,
             0,
             131072});
-            this.give_vehicle_updown.Location = new System.Drawing.Point(635, 158);
+            this.give_vehicle_updown.Location = new System.Drawing.Point(636, 237);
             this.give_vehicle_updown.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.give_vehicle_updown.Maximum = new decimal(new int[] {
             1,
@@ -946,6 +937,110 @@ namespace Halo3VisualRandomizer
             this.tableLayoutPanelLevels.Size = new System.Drawing.Size(0, 0);
             this.tableLayoutPanelLevels.TabIndex = 15;
             // 
+            // randomize_starting_profiles_checkbox
+            // 
+            this.randomize_starting_profiles_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.randomize_starting_profiles_checkbox.AutoSize = true;
+            this.randomize_starting_profiles_checkbox.Checked = true;
+            this.randomize_starting_profiles_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.randomize_starting_profiles_checkbox.Location = new System.Drawing.Point(636, 541);
+            this.randomize_starting_profiles_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.randomize_starting_profiles_checkbox.Name = "randomize_starting_profiles_checkbox";
+            this.randomize_starting_profiles_checkbox.Size = new System.Drawing.Size(28, 27);
+            this.randomize_starting_profiles_checkbox.TabIndex = 25;
+            this.randomize_starting_profiles_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 537);
+            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(317, 35);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Randomize starting loadouts";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 81);
+            this.label16.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(324, 35);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Randomize squad characters";
+            // 
+            // randomize_squad_characters_checkbox
+            // 
+            this.randomize_squad_characters_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.randomize_squad_characters_checkbox.AutoSize = true;
+            this.randomize_squad_characters_checkbox.Checked = true;
+            this.randomize_squad_characters_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.randomize_squad_characters_checkbox.Location = new System.Drawing.Point(636, 85);
+            this.randomize_squad_characters_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.randomize_squad_characters_checkbox.Name = "randomize_squad_characters_checkbox";
+            this.randomize_squad_characters_checkbox.Size = new System.Drawing.Size(28, 27);
+            this.randomize_squad_characters_checkbox.TabIndex = 30;
+            this.randomize_squad_characters_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 117);
+            this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(311, 35);
+            this.label17.TabIndex = 31;
+            this.label17.Text = "Randomize squad weapons";
+            // 
+            // randomize_squad_weapons_checkbox
+            // 
+            this.randomize_squad_weapons_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.randomize_squad_weapons_checkbox.AutoSize = true;
+            this.randomize_squad_weapons_checkbox.Checked = true;
+            this.randomize_squad_weapons_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.randomize_squad_weapons_checkbox.Location = new System.Drawing.Point(636, 121);
+            this.randomize_squad_weapons_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.randomize_squad_weapons_checkbox.Name = "randomize_squad_weapons_checkbox";
+            this.randomize_squad_weapons_checkbox.Size = new System.Drawing.Size(28, 27);
+            this.randomize_squad_weapons_checkbox.TabIndex = 32;
+            this.randomize_squad_weapons_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 153);
+            this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(301, 35);
+            this.label18.TabIndex = 33;
+            this.label18.Text = "Randomize squad vehicles";
+            // 
+            // randomize_squad_vehicles_checkbox
+            // 
+            this.randomize_squad_vehicles_checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.randomize_squad_vehicles_checkbox.AutoSize = true;
+            this.randomize_squad_vehicles_checkbox.Checked = true;
+            this.randomize_squad_vehicles_checkbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.randomize_squad_vehicles_checkbox.Location = new System.Drawing.Point(636, 157);
+            this.randomize_squad_vehicles_checkbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.randomize_squad_vehicles_checkbox.Name = "randomize_squad_vehicles_checkbox";
+            this.randomize_squad_vehicles_checkbox.Size = new System.Drawing.Size(28, 27);
+            this.randomize_squad_vehicles_checkbox.TabIndex = 34;
+            this.randomize_squad_vehicles_checkbox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -1026,8 +1121,6 @@ namespace Halo3VisualRandomizer
         private TextBox seed_box;
         private Label randomize_squads_label;
         private CheckBox randomize_squads_checkbox;
-        private Label label10;
-        private CheckBox randomize_starting_profiles_checkbox;
         private Label label9;
         private CheckBox randomize_cutscenes_checkbox;
         private Label label7;
@@ -1050,6 +1143,14 @@ namespace Halo3VisualRandomizer
         private TableLayoutPanel tableLayoutPanelVehicles;
         private TableLayoutPanel tableLayoutPanelEquipment;
         private TableLayoutPanel tableLayoutPanelLevels;
+        private CheckBox randomize_starting_profiles_checkbox;
+        private Label label17;
+        private CheckBox randomize_squad_characters_checkbox;
+        private Label label16;
+        private Label label10;
+        private CheckBox randomize_squad_vehicles_checkbox;
+        private Label label18;
+        private CheckBox randomize_squad_weapons_checkbox;
     }
 }
 
